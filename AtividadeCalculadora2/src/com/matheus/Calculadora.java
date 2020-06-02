@@ -60,6 +60,7 @@ public class Calculadora extends JFrame {
 				} else {
 					
 					nmr2 = 7;
+					lblchar.setText("7");
 				}
 			}
 		});
@@ -73,10 +74,13 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 8;
+					lblchar.setText("8");
 					
 				} else {
 					
 					nmr2 = 8;
+					lblchar.setText("8");
+
 				}
 			}
 		});
@@ -90,10 +94,14 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 9;
+					lblchar.setText("9");
+
 					
 				} else {
 					
 					nmr2 = 9;
+					lblchar.setText("9");
+
 				}
 			}
 		});
@@ -116,10 +124,14 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 4;
+					lblchar.setText("4");
+
 					
 				} else {
 					
 					nmr2 = 4;
+					lblchar.setText("4");
+
 				}
 			}
 		});
@@ -132,10 +144,14 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 5;
+					lblchar.setText("5");
+
 					
 				} else {
 					
 					nmr2 = 5;
+					lblchar.setText("5");
+
 				}
 			}
 		});
@@ -149,10 +165,14 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 6;
+					lblchar.setText("6");
+
 					
 				} else {
 					
 					nmr2 = 6;
+					lblchar.setText("6");
+
 				}
 			}
 		});
@@ -175,10 +195,14 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 1;
+					lblchar.setText("1");
+
 					
 				} else {
 					
 					nmr2 = 1;
+					lblchar.setText("1");
+
 				}
 			}
 		});
@@ -192,10 +216,14 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 2;
+					lblchar.setText("2");
+
 					
 				} else {
 					
 					nmr2 = 2;
+					lblchar.setText("2");
+
 				}
 			}
 		});
@@ -208,10 +236,14 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 3;
+					lblchar.setText("3");
+
 					
 				} else {
 					
 					nmr2 = 3;
+					lblchar.setText("3");
+
 				}
 			}
 		});
@@ -234,10 +266,14 @@ public class Calculadora extends JFrame {
 				if (op.equals(" ")) {
 					
 					nmr1 = 0;
+					lblchar.setText("0");
+
 					
 				} else {
 					
 					nmr2 = 0;
+					lblchar.setText("0");
+
 				}
 				
 			}
@@ -245,9 +281,19 @@ public class Calculadora extends JFrame {
 		botao0.setBounds(10, 150, 89, 23);
 		contentPane.add(botao0);
 		
-		JButton botaovirgula = new JButton(",");
-		botaovirgula.setBounds(106, 150, 89, 23);
-		contentPane.add(botaovirgula);
+		JButton botaolimpar = new JButton("CE");
+		botaolimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				res = 0;
+				op = (" ");
+				nmr1 = 0;
+				nmr2 = 0;
+				lblchar.setText("| ");
+				
+			}
+		});
+		botaolimpar.setBounds(106, 150, 89, 23);
+		contentPane.add(botaolimpar);
 		
 		JButton botaoigual = new JButton("=");
 		botaoigual.addActionListener(new ActionListener() {
@@ -261,6 +307,9 @@ public class Calculadora extends JFrame {
 				}else if(op.equals("/")) {
 					res = (nmr1/nmr2);
 				}
+				
+				lblchar.setText(""+res);
+				op = (" ");
 			}
 		});
 		botaoigual.setBounds(205, 150, 89, 23);
